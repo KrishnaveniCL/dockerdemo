@@ -1,5 +1,8 @@
 node {
-    def app
+     //cleanup current user docker credentials
+     sh 'rm  ~/.dockercfg || true'
+     sh 'rm ~/.docker/config.json || true'
+    
     stage('Clone repository') {
         git branch: "master", url: "https://github.com/ChetanKumar07/Sample-Docker-ECR.git"
     }
