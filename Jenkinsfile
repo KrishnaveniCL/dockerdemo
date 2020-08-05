@@ -8,7 +8,7 @@ pipeline {
          }
          }
          stage('Image Build'){
-             sh "docker build --build-arg APP_NAME=receipts -t 531359658382.dkr.ecr.ap-south-1.amazonaws.com/node_app:MyImage -f /root/myDockers/Dockerfile ."
+             sh "docker build --build-arg APP_NAME=receipts -t 531359658382.dkr.ecr.ap-south-1.amazonaws.com/node_app:MyImage"
          }
          stage('Push Image'){
          docker.withRegistry('https://531359658382.dkr.ecr.ap-south-1.amazonaws.com/node_app', 'ecr:ap-south-1:AWS_ECR') {
