@@ -10,7 +10,7 @@ node {
         sh "docker build -t 676488429201.dkr.ecr.us-east-2.amazonaws.com/ecr-docker:MyImage ."
     }
     stage('Push image') {
-        docker.withRegistry('https://676488429201.dkr.ecr.us-east-2.amazonaws.com/ecr-docker', 'ecr:us-east-2:AWS_ECR') {
+        docker.withRegistry('https://676488429201.dkr.ecr.us-east-2.amazonaws.com/ecr-docker', 'ecr:us-east-2:Aws-ecr') {
             sh "docker push 676488429201.dkr.ecr.us-east-2.amazonaws.com/ecr-docker:MyImage"
             //docker.image("MyImage").push()
         }
