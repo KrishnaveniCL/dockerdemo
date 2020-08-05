@@ -11,7 +11,8 @@ node {
     }
     stage('Push image') {
         docker.withRegistry('https://531359658382.dkr.ecr.ap-south-1.amazonaws.com/node_app', 'ecr:ap-south-1:AWS_ECR') {
-            sh "docker push 531359658382.dkr.ecr.ap-south-1.amazonaws.com/node_app:MyImage"
+            //sh "docker push 531359658382.dkr.ecr.ap-south-1.amazonaws.com/node_app:MyImage"
+            docker.image("MyImage").push()
         }
     }
 }
